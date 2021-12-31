@@ -11,11 +11,6 @@ function App() {
       <Router>
         <Header />
         <RouteConfig/>
-        {/* <Routes>
-          {routes.map((route, i) => (
-            <RouteWithSubRoutes key={i} {...route} />
-          ))}
-        </Routes> */}
       </Router>
     </div>
   );
