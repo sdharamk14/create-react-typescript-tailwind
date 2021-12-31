@@ -1,14 +1,11 @@
 import React from "react";
 import { HeartIcon, EyeIcon, ShareIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
+
 const Card = (props: any) => {
   const { blog, onView } = props;
-  console.log(onView);
   return (
-    <div
-      className="bg-white rounded-lg shadow-2xl cursor-pointer"
-    //   onClick={() => onView()}
-    >
+    <div className="bg-white rounded-lg shadow-2xl cursor-pointer">
       <img
         src={blog.imageUrl}
         alt="picture"
@@ -22,8 +19,6 @@ const Card = (props: any) => {
         <p className="text-center font-thin text-sm truncate">
           {blog.description}
         </p>
-
-        {/* <button className="text-purple-400 border border-purple-400">View</button> */}
       </section>
 
       <footer className="text-center rounded-b-lg p-3">
@@ -36,7 +31,11 @@ const Card = (props: any) => {
               className="w-10 h-10 rounded-full"
             />
             <div className="flex-1 flex-col justify-start text-left">
-              <Link to="#" className="text-left">
+              <Link
+                to={`/author/${blog.authorName.replace(" ", "_")}`}
+                state={{ blog }}
+                className="text-left hover:underline"
+              >
                 <span className="font-thin text-xs">{blog.authorName}</span>
               </Link>
               <div className="flex flex-row">

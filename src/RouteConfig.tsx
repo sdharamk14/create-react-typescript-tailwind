@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet, useRoutes } from "react-router-dom";
+import Author from "./pages/aspirant/Author";
 import Blog from "./pages/aspirant/Blog";
 import Blogs from "./pages/aspirant/Blogs";
 import Login from "./pages/Login";
@@ -47,11 +48,16 @@ const RouteConfig = () => {
     },
     {
       path: "blogs",
-      element: < Blogs/>,
+      element: <Blogs />,
       // children: [{ path: ":jobId", element: <Blog /> }],
-    },{
+    },
+    {
       path: "blog/:id",
-      element: < Blog/>,
+      element: <Blog />,
+    },
+    {
+      path: "author/:authorName",
+      element: <Author />,
     },
   ];
   return useRoutes(routes);

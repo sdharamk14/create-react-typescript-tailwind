@@ -1,5 +1,5 @@
 import React from "react";
-import ArrowCircleRightIcon from "@heroicons/react/outline/ArrowCircleRightIcon";
+import LockOpenIcon from "@heroicons/react/outline/LockOpenIcon";
 const SignUp = () => {
   return (
     <div className="min-h-screen flex justify-center items-center">
@@ -48,7 +48,7 @@ const SignUp = () => {
             {/* transform transition-all duration-75 ease-in-out hover:scale-105 */}
             sign up &nbsp;
             <span>
-              <ArrowCircleRightIcon className="h-4 w-4" />
+              <LockOpenIcon className="h-4 w-4" />
             </span>
           </button>
         </form>
