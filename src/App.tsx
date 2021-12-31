@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
-import Login from './Login';
+import Header from './components/Header';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 
 function App() {
   return (
-    <div className="container bg-blue-500">
-      <Login/>
+    <div className="container">
+      <Header/>
+      <SignUp/>
     </div>
   );
 }
