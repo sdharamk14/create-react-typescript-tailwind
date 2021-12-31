@@ -13,11 +13,11 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="space-x-3">
-        <NavLink to="/login" className="text-white">
+        <NavLink to="/login" className="text-white font-thin">
           Login
         </NavLink>
-        <NavLink to="/signup" className="text-white">
-          SignUp
+        <NavLink to="/signup" className="text-white font-thin">
+          Sign Up
         </NavLink>
       </div>
     </nav>

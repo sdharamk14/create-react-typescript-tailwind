@@ -1,58 +1,108 @@
 import React from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import Card from "../../components/Card";
 
 export const jobsContent = [
-  { 
+  {
     title: "Software Developer",
-    companyName: "A",
+    description: "This is this description",
+    postDate: "Dec 7, 2021",
+    readTime: "7 min",
+    authorName: "David Lee",
+    authorUrl:
+      "https://images.unsplash.com/profile-1638796823781-58ce900317ceimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff",
+    imageUrl:
+      "https://media.istockphoto.com/photos/water-splash-picture-id182812025",
   },
   {
     title: "React Developer",
-    companyName: "B",
+    description: "This is this description",
+    postDate: "Dec 7, 2021",
+    readTime: "7 min",
+    authorName: "David Lee",
+    authorUrl:
+      "https://images.unsplash.com/profile-1638796823781-58ce900317ceimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff",
+    imageUrl:
+      "https://media.istockphoto.com/photos/water-splash-picture-id182812025",
   },
   {
     title: "BA Developer",
-    companyName: "C",
+    description: "This is this description",
+    postDate: "Dec 7, 2021",
+    readTime: "7 min",
+    authorName: "David Lee",
+    authorUrl:
+      "https://images.unsplash.com/profile-1638796823781-58ce900317ceimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff",
+    imageUrl:
+      "https://media.istockphoto.com/photos/water-splash-picture-id182812025",
   },
   {
     title: "BA Developer",
-    companyName: "C",
+    description: "This is this description",
+    postDate: "Dec 7, 2021",
+    readTime: "7 min",
+    authorName: "David Lee",
+    authorUrl:
+      "https://images.unsplash.com/profile-1638796823781-58ce900317ceimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff",
+    imageUrl:
+      "https://media.istockphoto.com/photos/water-splash-picture-id182812025",
   },
   {
     title: "BA Developer",
-    companyName: "C",
+    description: "This is this description",
+    postDate: "Dec 7, 2021",
+    readTime: "7 min",
+    authorName: "David Lee",
+    authorUrl:
+      "https://images.unsplash.com/profile-1638796823781-58ce900317ceimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff",
+    imageUrl:
+      "https://media.istockphoto.com/photos/water-splash-picture-id182812025",
   },
   {
     title: "BA Developer",
-    companyName: "C",
+    description: "This is this description",
+    postDate: "Dec 7, 2021",
+    readTime: "7 min",
+    authorName: "David Lee",
+    authorUrl:
+      "https://images.unsplash.com/profile-1638796823781-58ce900317ceimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff",
+    imageUrl:
+      "https://media.istockphoto.com/photos/water-splash-picture-id182812025",
   },
   {
     title: "BA Developer",
-    companyName: "C",
+    description: "This is this description",
+    postDate: "Dec 7, 2021",
+    readTime: "7 min",
+    authorName: "David Lee",
+    authorUrl:
+      "https://images.unsplash.com/profile-1638796823781-58ce900317ceimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff",
+    imageUrl:
+      "https://media.istockphoto.com/photos/water-splash-picture-id182812025",
   },
   {
     title: "BA Developer",
-    companyName: "C",
+    description: "This is this description",
+    postDate: "Dec 7, 2021",
+    readTime: "7 min",
+    authorName: "David Lee",
+    authorUrl:
+      "https://images.unsplash.com/profile-1638796823781-58ce900317ceimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff",
+    imageUrl:
+      "https://media.istockphoto.com/photos/water-splash-picture-id182812025",
   },
 ];
 
 const Blogs = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <div className="grid grid-cols-4 gap-4 p-6">
-      {jobsContent.map((job, index) => (
-        <div key={index} className="border rounded-md">
-          <h4 className="text-2xl mb-2 px-2 py-4 text-center text-gray-800">
-            {job.title}
-          </h4>
-          <h6 className="text-xl mb-2 p-2 text-center text-gray-800">
-            Company: {job.companyName}
-          </h6>
-          <button onClick={() => navigate(`/blog/${index}`)}
-            className="rounded-bl h-10 rounded-br bg-purple-400 text-white text-center w-full">
-            Apply
-          </button>
-        </div>
+    <div className="grid grid-cols-4 gap-5 p-6">
+      {jobsContent.map((blog, index) => (
+        <Card
+          key={index}
+          blog={blog}
+          onView={() => navigate(`/blog/${index}`)}
+        />
       ))}
     </div>
   );
