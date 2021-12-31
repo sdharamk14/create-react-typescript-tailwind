@@ -4,8 +4,9 @@ import { useLocation } from "react-router-dom";
 // import {a} from "@heroicons/react/solid/"
 const Author = () => {
   const location = useLocation()
-  console.log(location)
-  // const {blog: any} = location.state;
+  //@ts-ignore
+  const {state: {blog}} = location;
+  // const { blog} = state;
   // console.log(blog);
   return (
     <div>
@@ -19,10 +20,10 @@ const Author = () => {
             />
           </div>
           <div className="text-center">
-            <span className="text-white text-xl font-thin">Author Name</span>
+            <span className="text-white text-xl font-thin">{blog.authorName}</span>
           </div>
           <div className="text-center">
-            <span className="text-white text-sm font-thin">
+            <span className="text-white text-sm italic">
               Well known for his skills and dynamic leadership, David has led
               development teams building and deploying great products. He is
               passionate about helping people learn mobile development with

@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Card from "../../components/Card";
+import Pagination from "../../components/Pagination";
 
 export const jobsContent = [
   {
@@ -96,15 +97,20 @@ export const jobsContent = [
 const Blogs = () => {
   const navigate = useNavigate();
   return (
-    <div className="grid grid-cols-4 gap-5 p-6">
-      {jobsContent.map((blog, index) => (
-        <Card
-          key={index}
-          blog={blog}
-          onView={() => navigate(`/blog/${index}`)}
-        />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-4 gap-5 p-6">
+        {jobsContent.map((blog, index) => (
+          <Card
+            key={index}
+            blog={blog}
+            onView={() => navigate(`/blog/${index}`)}
+          />
+        ))}
+      </div>
+      <div className="py-4">
+        <Pagination />
+      </div>
+    </>
   );
 };
 export default Blogs;
