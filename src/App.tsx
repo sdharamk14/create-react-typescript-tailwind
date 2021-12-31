@@ -1,15 +1,35 @@
-import React from 'react';
-import './App.css';
-import Header from './components/Header';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
+// @ts-nocheck
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, useRoutes } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header";
+import RouteConfig from "./RouteConfig";
 
 function App() {
   return (
     <div className="container">
-      <Header/>
-      <SignUp/>
+      <Router>
+        <Header />
+        <RouteConfig/>
+        {/* <Routes>
+          {routes.map((route, i) => (
+            <RouteWithSubRoutes key={i} {...route} />
+          ))}
+        </Routes> */}
+      </Router>
     </div>
+  );
+}
+
+function RouteWithSubRoutes(route) {
+  return (
+    <Route
+      path={route.path}
+      render={(props) => (
+        // pass the sub-routes down to keep nesting
+        <route.component {...props} element={route.routes} />
+      )}
+    />
   );
 }
 
