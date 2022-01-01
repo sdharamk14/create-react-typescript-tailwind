@@ -3,6 +3,7 @@ import { Outlet, useRoutes } from "react-router-dom";
 import Author from "./pages/aspirant/Author";
 import Blog from "./pages/aspirant/Blog";
 import Blogs from "./pages/aspirant/Blogs";
+import CreateBlog from "./pages/aspirant/CreateBlog";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 
@@ -58,6 +59,10 @@ const RouteConfig = () => {
     {
       path: "author/:authorName",
       element: <Author />,
+    },
+    {
+      path: "create",
+      element: <CreateBlog />,
     },
   ];
   return useRoutes(routes);
